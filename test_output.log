@@ -1,0 +1,126 @@
+===========================================================
+Running Scenario: Escaping-To-Captured
+Directory: ./Escaping-To-Captured
+===========================================================
+  -> Running Baseline...
+  -> Running SmartAOT...
+
+--- FINAL REPORT FOR Escaping-To-Captured ---
+AOT loads in Baseline: 0
+AOT loads in SmartAOT: 2
+AOT loads SAVED by SmartAOT: 2
+Failed AOT loads in Baseline:
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+Failed AOT loads in SmartAOT:
+  - A.myrun()V
+Methods uniquely saved by SmartAOT (invalidated in Baseline):
+  - C.bar()I
+  - C.<init>()V
+-----------------------------------------------------------
+
+===========================================================
+Running Scenario: Captured-To-Escaping
+Directory: ./Captured-To-Escaping
+===========================================================
+  -> Running Baseline...
+  -> Running SmartAOT...
+
+--- FINAL REPORT FOR Captured-To-Escaping ---
+AOT loads in Baseline: 0
+AOT loads in SmartAOT: 2
+AOT loads SAVED by SmartAOT: 2
+Failed AOT loads in Baseline:
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+Failed AOT loads in SmartAOT:
+  - A.myrun()V
+Methods uniquely saved by SmartAOT (invalidated in Baseline):
+  - C.bar()I
+  - C.<init>()V
+-----------------------------------------------------------
+
+===========================================================
+Running Scenario: Escaping-To-Escaping
+Directory: ./Escaping-To-Escaping
+===========================================================
+  -> Running Baseline...
+  -> Running SmartAOT...
+
+--- FINAL REPORT FOR Escaping-To-Escaping ---
+AOT loads in Baseline: 0
+AOT loads in SmartAOT: 3
+AOT loads SAVED by SmartAOT: 3
+Failed AOT loads in Baseline:
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+Failed AOT loads in SmartAOT:
+Methods uniquely saved by SmartAOT (invalidated in Baseline):
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+-----------------------------------------------------------
+
+===========================================================
+Running Scenario: Captured-To-Captured
+Directory: ./Captured-To-Captured
+===========================================================
+  -> Running Baseline...
+  -> Running SmartAOT...
+
+--- FINAL REPORT FOR Captured-To-Captured ---
+AOT loads in Baseline: 0
+AOT loads in SmartAOT: 3
+AOT loads SAVED by SmartAOT: 3
+Failed AOT loads in Baseline:
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+Failed AOT loads in SmartAOT:
+Methods uniquely saved by SmartAOT (invalidated in Baseline):
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+-----------------------------------------------------------
+
+===========================================================
+Running Scenario: Captured-To-Captured-FieldMutation
+Directory: ./Captured-To-Captured-FieldMutation
+===========================================================
+  -> Running Baseline...
+  -> Running SmartAOT...
+
+--- FINAL REPORT FOR Captured-To-Captured-FieldMutation ---
+AOT loads in Baseline: 0
+AOT loads in SmartAOT: 3
+AOT loads SAVED by SmartAOT: 3
+Failed AOT loads in Baseline:
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+Failed AOT loads in SmartAOT:
+Methods uniquely saved by SmartAOT (invalidated in Baseline):
+  - A.myrun()V
+  - C.bar()I
+  - C.<init>()V
+-----------------------------------------------------------
+
+All scenarios completed! Execution logs are saved inside each scenario folder.
+Scenario: Escaping-To-Captured
+  [PASS] Baseline failed to load A.myrun()V, C.bar()I, C.<init>()V (Expected)
+  [PASS] SmartAOT correctly DISCARDED A.myrun()V and LOADED C.bar()I, C.<init>()V (Expected - Recompilation Forced)
+Scenario: Captured-To-Escaping
+  [PASS] Baseline failed to load A.myrun()V, C.bar()I, C.<init>()V (Expected)
+  [PASS] SmartAOT correctly DISCARDED A.myrun()V and LOADED C.bar()I, C.<init>()V (Expected - Recompilation Forced)
+Scenario: Escaping-To-Escaping
+  [PASS] Baseline failed to load A.myrun()V, C.bar()I, C.<init>()V (Expected)
+  [PASS] SmartAOT successfully LOADED A.myrun()V, C.bar()I, C.<init>()V (Expected - Safely Salvaged)
+Scenario: Captured-To-Captured
+  [PASS] Baseline failed to load A.myrun()V, C.bar()I, C.<init>()V (Expected)
+  [PASS] SmartAOT successfully LOADED A.myrun()V, C.bar()I, C.<init>()V (Expected - Safely Salvaged)
+Scenario: Captured-To-Captured-FieldMutation
+  [PASS] Baseline failed to load A.myrun()V, C.bar()I, C.<init>()V (Expected)
+  [PASS] SmartAOT successfully LOADED A.myrun()V, C.bar()I, C.<init>()V (Expected - Safely Salvaged)
